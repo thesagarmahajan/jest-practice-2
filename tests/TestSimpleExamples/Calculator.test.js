@@ -2,11 +2,13 @@ const {Addition, Subtraction, Division} = require("../../SimpleExamples/Calculat
 
 describe('Testing the Calculator', () => {
     test('While Adding Numbers', () => {
+        // toBe is a matcher
         expect(Addition(1, 2)).toBe(3)
     });
     
     test('While Subtracting Numbers', () => {
         expect(Subtraction(1, 1)).toBe(0)
+        // not is a modifier
         expect(Subtraction(1, 2)).not.toBe(-1);
     });
     
