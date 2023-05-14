@@ -1,38 +1,5 @@
-const { fetchingData } = require("../../SimpleExamples/Functions");
-// const axios = require('axios');
+const { fetchingData, mySimpleFunction, myPrimeFilter } = require("../../SimpleExamples/Functions");
 
-// jest.mock('axios')
-// let axios = jest.fn()
-// describe('Testing Functions',  () => {
-//     test('Testing Axios', async () => {
-//         await fetchingData()
-//         expect(axios.get).toHaveBeenCalled(); 
-//     });
-// });
-
-function mySimpleFunction(arg, success, error){
-    if(arg){
-        success()
-    }
-    else{
-        error("ERROR")
-    }
-}
-
-function myPrimeFilter(nums, callback){
-    let count=0;
-    for (let i = 0; i < nums.length; i++) {
-        count=0;
-        for (let j = 1; j <= nums[i]; j++) {   
-            if(nums[i]%j==0){
-                count++;
-            }
-        }
-        if(count==2){
-            callback(nums[i])
-        }
-    }
-}
 
 // Mocking function
 test('Example-1 Without Mocking', () => {
@@ -60,7 +27,7 @@ test('Example-1 With Mocking', () => {
 
 });
 
-test.only('Example-2 Without Mocking', () => {
+test('Example-2 Without Mocking', () => {
     let c=0;
     let input = [2, 5, 8, 9, 13];
     let expectedOutput = [2,5,13]
